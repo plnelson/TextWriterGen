@@ -1,0 +1,24 @@
+﻿%$; Copyright (c) 2016 Patrick Nelson. All rights reserved.
+%$; Licensed under the MIT license. See LICENSE file in the project root for full license information.
+%$;
+%$; Input file to test errors and other scenarios not covered by Self.txt
+%$; Expected output:
+%$;   Parse error on line 17: Expecting parameter name identifier.
+%$;   Parse error on line 19: Expecting ')'.
+%$;   Parse error on line 21: Unexpected text after function name
+%$;   Parse error on line 24: Unknown parameter - b
+%$;   Output file generated.
+%$-DirectConcat(val1, val2)
+    $val1$$val2$.
+%$-OutDollar(val1)
+    $$
+%$-CSharpIdent(string)
+$string$
+%$-MissingParam(a,)
+$a$
+%$-MissingParen(a
+$a$
+%$-ExtraText() a
+a
+%$-UnknownParam(a)
+$b$
